@@ -1,0 +1,89 @@
+project = {
+   _id: PROJECT_ID,
+   name: TEXT, 
+   description: TEXT,
+   created_by: USER_ID,
+   dateCreated: DATE_TIME,
+   duration:NUMBER,
+   deadline:DATE_TIME,
+   startedDate: DATE_TIME,
+   closedDate: DATE_TIME,
+   status: TEXT,
+   members: [	
+      {
+         user:USER_ID,
+         userRole:ROLE_ID,
+         dateJoined:DATE_TIME,
+         dateLeft:DATE_TIME
+      },
+      {
+         user:USER_ID,
+         userRole:TEXT,
+         dateJoined:DATE_TIME,
+         dateLeft:DATE_TIME
+      }
+   ]
+}
+
+
+user = {
+   _id: USER_ID,
+   name: TEXT, 
+   passwords: PASSWORDS,
+   dateJoined: DATE_TIME,
+   privileges:[PRV1, PRV2, PRV3],
+   status: TEXT
+}
+
+privilege = {
+    _id: PRIVILEGE_ID,
+   name: TEXT, 
+}
+
+role = {
+    _id: ROLE_ID,
+   name: TEXT, 
+}
+
+tasks = {
+   _id: TASK_ID,
+   name: TEXT, 
+   description: TEXT,
+   created_by: USER_ID,
+   in_list: LIST_ID,
+   duration: NUMBER,
+   dueDate: DATE_TIME,
+   startedDate: DATE_TIME,
+   closedDate: DATE_TIME
+   files: [FILE1, FILE2, FILE3],
+   assigned_for: [USER1, USER2, USER3],
+   watched_by:[USER1, USER2, USER3],
+   status: TEXT
+   comments: [	
+      {
+         user:USER_ID,
+         message: TEXT,
+         dateCreated: DATE_TIME,
+         dateEdited:DATE_TIME,
+         files: [FILE1, FILE2, FILE3],
+         tags: [USER1, USER2, USER3]
+      },
+      {
+         user:USER_ID,
+         message: TEXT,
+         dateCreated: DATE_TIME,
+         dateEdited:DATE_TIME,
+         files: [FILE1, FILE2, FILE3],
+         tags: [USER1, USER2, USER3]
+      }
+   ]
+   
+}
+
+list = {
+   _id: LIST_ID,
+   name: TEXT, 
+   position: number,
+   status: TEXT
+}
+
