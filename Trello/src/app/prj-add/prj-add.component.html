@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Project Name</label>
+        <input type="text" class="form-control" formControlName="prj_name" #prj_name />
+        <div *ngIf="angForm.controls['prj_name'].invalid && (angForm.controls['prj_name'].dirty || 
+        angForm.controls['prj_name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['prj_name'].errors.required">
+            Project Name is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Project Description </label>
+        <input type="text" class="form-control" formControlName="prj_desc" #prj_desc />
+        <div *ngIf="angForm.controls['prj_desc'].invalid && (angForm.controls['prj_desc'].dirty || 
+        angForm.controls['prj_desc'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['prj_desc'].errors.required">
+            Project description is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Project Priority </label>
+        <input type="text" class="form-control" formControlName="priority" #priority />
+        <div *ngIf="angForm.controls['prj_desc'].invalid && (angForm.controls['prj_desc'].dirty || 
+        angForm.controls['prj_desc'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['prj_desc'].errors.required">
+            Priority is required.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="addProject(prj_name.value, prj_desc.value, priority.value)"
+            [disabled]="angForm.pristine || angForm.invalid" 
+            class="btn btn-primary">
+            Add Project
+         </button>
+    </div>
+    </form>
+  </div>
+</div>
