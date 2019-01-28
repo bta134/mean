@@ -27,10 +27,9 @@ export class PrjEditComponent implements OnInit {
       });
     }
 
-    updateBusiness(prj_name, prj_desc, priority) {
+    updateProject(prj_name, prj_desc, priority) {
       this.route.params.subscribe(params => {
          this.ps.updateProject(prj_name, prj_desc, priority, params['id']);
-         this.router.navigate(['/project']);
    });
   }
     ngOnInit() {
