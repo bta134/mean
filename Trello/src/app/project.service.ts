@@ -17,7 +17,7 @@ export class ProjectService {
     };
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
-        .subscribe(res => console.log('Done'));
+        .subscribe(res => window.location.href = '/project');
   }
 
   getProjects() {
@@ -42,7 +42,7 @@ export class ProjectService {
       this
         .http
         .post(`${this.uri}/update/${id}`, obj)
-        .subscribe(res => console.log('Done'));
+        .subscribe(res => window.location.href = '/project');
     }
   
     deleteProject(id) {

@@ -25,8 +25,7 @@ export class PrjGetComponent implements OnInit {
 
   deleteProject(id) {
     this.ps.deleteProject(id).subscribe(res => {
-      console.log('Deleted');
-      this.router.navigate(['/project']);
+      window.location.href = '/project';
     });
   }
 }
